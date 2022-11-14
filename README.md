@@ -75,3 +75,4 @@ result_df, model_info = experiment.run_experiment(seed_list, eval_metric="auc")
 Below is a diagram of how the `emdot` package works under the hood:
 
 ![System Diagram](img/system_diagram.png)
+

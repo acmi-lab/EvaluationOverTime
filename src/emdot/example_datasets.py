@@ -1,4 +1,4 @@
-"""Example datasets to be used in evluation over time."""
+"""Example datasets to be used in evaluation over time."""
 
 import numpy as np
 import pandas as pd
