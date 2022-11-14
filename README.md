@@ -19,47 +19,34 @@ cd EvaluationOverTime/src
 pip install .
 ```
 
-### Usage
+### Quickstart
 
-![System Diagram](img/system_diagram.png)
+Below is a code snippet demonstrating how to use this package. For a more complete introduction, **please see [tutorial.ipynb](tutorial.ipynb)**. To view documentation, simply run `help(...)` on the class or object of interest.
 
-Below is a code snippet demonstrating how to use this package. For more details, please see `tutorial.ipynb`.
 ```
-## First, specify experiment and model parameters.
-max_iter = 500
-training_regime = 'sliding_window'
-seed_list = [1, 2, 3]
+from emdot.eot_experiment import EotExperiment
+from emdot.example_datasets import get_toy_breast_cancer_data
+from emdot.models.LR import LR
+from emdot.models.GBDT import GBDT
+import os
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from emdot.utils import plot_metric_vs_time
+
+## First, specify model parameters and experiment.
 
 model_name = 'LR'
+model_class = LR
+hyperparam_grid = {"C": [10.0**e for e in np.arange(-2, 5)], "max_iter": [500]}
+
+seed_list = [1, 2, 3]
 
 dataset_name = 'toy_data'
 label = 'target'
 training_regime = 'sliding_window'
-
 df, col_dict = get_toy_breast_cancer_data()
 
-# model class and hyperparameter grids
-models = {
-    "LR": {
-        "model_class": LR,
-        "search_space": {
-            "C": [10.0**e for e in np.arange(-2, 5)],
-        }
-    },
-    "GBDT": {
-        "model_class": GBDT,
-        "search_space": {
-            "n_estimators": [50, 100],
-            "max_depth": [3, 5],
-            "learning_rate": [0.01, 0.1],
-        }
-    },
-}
-model_class = models[model_name]['model_class']
-hyperparam_grid = models[model_name]['search_space']
-hyperparam_grid['max_iter'] = [max_iter]
-
-# experiment setup
 experiment = EotExperiment(
     dataset_name = dataset_name,
     df = df, 
@@ -81,17 +68,10 @@ experiment = EotExperiment(
 
 ## Next, run the experiment.
 result_df, model_info = experiment.run_experiment(seed_list, eval_metric="auc")
-
-## Finally, save the results.
-result_name = f"{dataset_name}_{max_iter}_{label}_{model_name}_{seed_num}_{training_regime}.csv"
-
-result_folder = f'result/{model_name}/{dataset_name}'
-if not os.path.exists('result'):
-    os.makedirs(result_folder)
-
-result_df.to_csv(f"./{result_folder}/{result_name}")
-
-if model_name == "LR":  # save coefficients if logistic regression
-    model_info.to_csv(f"./model_info/{model_name}/{dataset_name}/{result_name}")
-
 ```
+
+### Inner workings
+
+Below is a diagram of how the `emdot` package works under the hood:
+
+![System Diagram](img/system_diagram.png)
