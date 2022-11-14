@@ -19,9 +19,7 @@ cd EvaluationOverTime/src
 pip install .
 ```
 
-### Usage
-
-![System Diagram](img/system_diagram.png)
+### Quickstart
 
 Below is a code snippet demonstrating how to use this package. For more details, please see `tutorial.ipynb`.
 ```
@@ -95,3 +93,9 @@ if model_name == "LR":  # save coefficients if logistic regression
     model_info.to_csv(f"./model_info/{model_name}/{dataset_name}/{result_name}")
 
 ```
+
+### Inner workings
+
+Below is a diagram of how the `emdot` package works under the hood:
+
+![System Diagram](img/system_diagram.png)
