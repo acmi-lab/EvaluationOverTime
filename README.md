@@ -1,6 +1,6 @@
 # Model Evaluation On Medical Datasets (EMDOT)
 
-This repository is the official implementation of the EMDOT evaluation framework described in _Model Evaluation On Medical Datasets_. 
+This repository is the official implementation of the EMDOT evaluation framework described in _[Model Evaluation On Medical Datasets](https://arxiv.org/pdf/2211.07165.pdf)_. 
 
 ### Installation
 
