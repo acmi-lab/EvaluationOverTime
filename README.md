@@ -1,5 +1,7 @@
 # Model Evaluation On Medical Datasets (EMDOT)
 
+Model evaluation which takes time into account is [far from standard](https://docs.google.com/spreadsheets/d/1hrR7JZzvQWv4Up5PaKzVxxnGPANs5hHqG4ShErhkG2U/edit?usp=sharing) in research on machine learning for healthcare.
+
 This repository is the official implementation of the EMDOT evaluation framework described in _[Model Evaluation On Medical Datasets Over Time](https://arxiv.org/abs/2211.07165)_. 
 
 ### Installation
