@@ -4,6 +4,16 @@ Model evaluation which takes time into account is [far from standard](https://do
 
 This repository is the official implementation of the EMDOT evaluation framework described in _[Model Evaluation On Medical Datasets Over Time](https://arxiv.org/abs/2211.07165)_. 
 
+Citation:
+```
+@article{zhou2022model,
+  title={Model Evaluation in Medical Datasets Over Time},
+  author={Zhou, Helen and Chen, Yuwen and Lipton, Zachary C},
+  journal={arXiv preprint arXiv:2211.07165},
+  year={2022}
+}
+```
+
 ### Installation
 
 First, create a conda environment:
