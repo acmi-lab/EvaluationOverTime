@@ -1,4 +1,4 @@
-# Model Evaluation On Medical Datasets (EMDOT)
+# Evaluating Model Performance in Medical Datasets Over Time (EMDOT)
 
 Model evaluation which takes time into account is [far from standard](https://docs.google.com/spreadsheets/d/1hrR7JZzvQWv4Up5PaKzVxxnGPANs5hHqG4ShErhkG2U/edit?usp=sharing) in research on machine learning for healthcare.
 
